@@ -1,0 +1,10 @@
+.mypersonalwhatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.myiframe, .mywhatsappiframe {
+  margin-bottom: -75px;
+  overflow: hidden;
+}
