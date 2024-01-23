@@ -33,3 +33,19 @@ if ('serviceWorker' in navigator && 'SyncManager' in window) {
   }
 }
 
+// Add an event listener for the `sync` event in your service worker.
+self.addEventListener('sync', event => {
+
+  // Check for correct tag on the sync event.
+  if (event.tag === 'database-sync') {
+
+    // Execute the desired behavior with waitUntil().
+    event.waitUntil(
+
+      // This is just a hypothetical function for the behavior we desire.
+      pushLocalDataToDatabase();
+    );
+    }
+});
+
+
