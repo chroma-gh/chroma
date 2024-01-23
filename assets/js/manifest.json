@@ -1,0 +1,52 @@
+{
+  "background_color": "#ffffff",
+  "description": "chroma leave system",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "chroma-leave",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "chroma-GH",
+  "start_url": "/",
+  "theme_color": "#7be4e4",
+  "categories": [
+    "business",
+    "education",
+    "productivity",
+    "shopping"
+  ],
+  "screenshots": [],
+  "icons": [
+    {
+      "src": "/assets/img/skills_verification_logo1.png?h=22452a04ba489ccbc8f16383c7b3773c",
+      "type": "image/png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "/assets/img/skills_verification_logo2.png?h=b504a432c809f93f1aaeedf82e9e98eb",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "/assets/img/skills_verification_logo3.png?h=e0a90a9b872080518aeefa237af92ab6",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "/assets/img/skills_verification_logo4.png?h=73850b0118d71165ea47238e4f4cbbee",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/img/skills_verification_logo5.png?h=2b50e270913f868c97fa9c5eca37b880",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "https://skillsverification.co.uk/assets/img/profile.png",
+      "type": "image/png",
+      "sizes": "1000x1000"
+    }
+  ],
+  "shortcuts": []
+}
