@@ -1,43 +1,18 @@
-// sw.js
+// This is the "Offline copy of pages" service worker
 
-// Service Worker Installation
-self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open('your-cache-name').then((cache) => {
-      return cache.addAll([
-        // Add your assets (e.g., HTML, CSS, JS, images) to be cached here
-        '/',
-        '/index.html',
-        '/styles/main.css',
-        '/scripts/main.js',
-        '/images/logo.png',
-        // Add more resources as needed
-      ]);
-    })
-  );
+const CACHE = "pwabuilder-offline";
+
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
+
+self.addEventListener("message", (event) => {
+  if (event.data && event.data.type === "SKIP_WAITING") {
+    self.skipWaiting();
+  }
 });
 
-// Service Worker Activation
-self.addEventListener('activate', (event) => {
-  // Remove old caches if any
-  event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cacheName) => {
-          if (cacheName !== 'your-cache-name') {
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
-  );
-});
-
-// Service Worker Fetch
-self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
-    })
-  );
-});
+workbox.routing.registerRoute(
+  new RegExp('/*'),
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: CACHE
+  })
+);
